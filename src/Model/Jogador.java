@@ -19,6 +19,7 @@ class Jogador {
         this.estaPreso = false;
         this.dinheiro = 4000;
         this.qtdFugaPrisao = 0;
+        this.nome = nome;
     }
     
     /*Função para gerar números entre min e max, incluindo os limites */
