@@ -4,8 +4,8 @@
  * 
 */
 abstract class Casa{
-    int posicao;
-    String propriedade;
+    private int posicao;
+    private String propriedade;
 
     public Casa(int posicao, String propriedade){
         this.posicao = posicao;

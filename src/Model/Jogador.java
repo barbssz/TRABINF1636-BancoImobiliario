@@ -7,11 +7,11 @@ enum Cor{
 
 class Jogador {
     /*Propriedades de objeto*/
-    int qtdFugaPrisao;
-    boolean estaPreso;
-    float dinheiro;
-    Cor cor;
-    String nome;
+    private int qtdFugaPrisao;
+    private boolean estaPreso;
+    private float dinheiro;
+    private Cor cor;
+    private String nome;
 
     /*Construtor */
     public Jogador(Cor cor, String nome) {
