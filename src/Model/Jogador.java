@@ -1,9 +1,11 @@
 package Model;
 import java.util.*;
-
+/**Enumerator que seta as cores dos pinos do jogo, de acordo com as imagens. */
 enum Cor{
      VERMELHO, AZUL, LARANJA, AMARELO, ROXO, CINZA;
 }
+
+
 
 class Jogador {
     /*Propriedades de objeto*/
@@ -21,6 +23,27 @@ class Jogador {
         this.qtdFugaPrisao = 0;
         this.nome = nome;
     }
+
+    /*Criando getters */
+    public int getQtdFugaPrisao(){
+        return this.qtdFugaPrisao;
+    }
+    
+    public boolean getEstaPreso(){
+        return this.estaPreso;
+    }
+
+    public float getDinheiro(){
+        return this.dinheiro;
+    }
+
+    public String getNome(){
+        return this.nome;
+    }
+
+    public Cor getCor(){
+        return this.cor;
+    }    
     
     /*Função para gerar números entre min e max, incluindo os limites */
     public int generateRandomInt(int min, int max){
