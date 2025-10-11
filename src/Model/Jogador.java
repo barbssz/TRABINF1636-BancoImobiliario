@@ -1,64 +1,80 @@
+package model;
 
-import java.util.*;
-/**Enumerator que seta as cores dos pinos do jogo, de acordo com as imagens. */
-enum Cor{
-     VERMELHO, AZUL, LARANJA, AMARELO, ROXO, CINZA;
-}
-
-
-
+/**
+ * Classe que representa um jogador no jogo de Banco Imobiliário.
+ * O jogador possui nome, saldo, posição no tabuleiro e estado de prisão.
+ */
 class Jogador {
-    /*Propriedades de objeto*/
-    private int qtdFugaPrisao;
-    private boolean estaPreso;
-    private float dinheiro;
-    private Cor cor;
-    private String nome;
+    private String nome; // nome do jogador
+    private int saldo;// saldo atual do jogador
+    private boolean preso; // indica se o jogador está preso no momento
+    private int posicao; // posição atual do jogador no tabuleiro (0-39)
 
-    /*Construtor */
-    public Jogador(Cor cor, String nome) {
-        this.cor = cor;
-        this.estaPreso = false;
-        this.dinheiro = 4000;
-        this.qtdFugaPrisao = 0;
+    /**
+     * Construtor do jogador.
+     * Inicializa o nome, saldo inicial, estado de prisão e posição inicial.
+     * @param nome Nome do jogador.
+     */
+    public Jogador(String nome) {
         this.nome = nome;
-    }
-
-    /*Criando getters */
-    public int getQtdFugaPrisao(){
-        return this.qtdFugaPrisao;
+        this.saldo = 4000;
+        this.preso = false;
+        this.posicao = 0;
     }
     
-    public boolean getEstaPreso(){
-        return this.estaPreso;
+    /**
+     * Retorna a posição atual do jogador no tabuleiro.
+     * @return Posição do jogador.
+     */
+    public int getPosicao() { 
+        return posicao; 
     }
 
-    public float getDinheiro(){
-        return this.dinheiro;
+    /**
+     * Define a posição do jogador no tabuleiro.
+     * @param posicao Nova posição do jogador.
+     */
+    public void setPosicao(int posicao) { 
+        this.posicao = posicao; 
     }
 
-    public String getNome(){
-        return this.nome;
+    /**
+     * Retorna o nome do jogador.
+     * @return Nome do jogador.
+     */
+    public String getNome() { 
+        return nome; 
     }
 
-    public Cor getCor(){
-        return this.cor;
-    }    
-    
-    /*Função para gerar números entre min e max, incluindo os limites */
-    public int generateRandomInt(int min, int max){
-        Random random = new Random();
-        return random.nextInt(max - min + 1) + min;
+    /**
+     * Retorna o saldo atual do jogador.
+     * @return Saldo do jogador.
+     */
+    public int getSaldo() { 
+        return saldo; 
     }
-    
 
-    /*Função que retorna um array com 2 elementos, representando o resultado dos lancamentos de cada dado */
-    public int[] lancarDados(){
-        int dados[];
-        dados = new int[2];
-        dados[0] = generateRandomInt(0, 6);
-        dados[1] = generateRandomInt(0, 6);
-        return dados;
+    /**
+     * Define o saldo do jogador.
+     * @param saldo Novo saldo do jogador.
+     */
+    public void setSaldo(int saldo) { 
+        this.saldo = saldo; 
     }
-    
+
+    /**
+     * Verifica se o jogador está preso.
+     * @return true se estiver preso, false caso contrário.
+     */
+    public boolean estaPreso() { 
+        return preso; 
+    }
+
+    /**
+     * Define o estado de prisão do jogador.
+     * @param preso true para preso, false para livre.
+     */
+    public void setPreso(boolean preso) { 
+        this.preso = preso; 
+    }
 }
