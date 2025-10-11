@@ -8,7 +8,7 @@ import java.util.Random;
  * Classe principal que representa o modelo do jogo de Banco Imobiliário.
  * Gerencia jogadores, tabuleiro, regras de movimentação, compra, aluguel e construção.
  */
-public class BancoImobiliarioModel {
+class BancoImobiliarioModel {
     /**
      * Lista de jogadores participantes da partida.
      */
